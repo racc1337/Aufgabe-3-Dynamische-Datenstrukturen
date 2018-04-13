@@ -9,7 +9,7 @@ public class StackDynamic<E>{
 			this.data = data;
 		}
 	}
-	// head ist das erste Element des Stacks; Stackpointer
+	// head ist das erste Element des Stacks; Stack pointer
 	Node head;
 	// Erstellt einen leeren Stack
 	public StackDynamic(){
@@ -62,7 +62,7 @@ public class StackDynamic<E>{
 		}
 		return null;
 	}
-	// 
+	// Gibt den Index des gesuchten Elements item zurueck. (Stack pointer = position 1) Gibt -1 zurück, falls das Element nicht im Stack zu finden ist
 	public int contains(E item){
 		for(int i=1;i<=this.size();i++){
 			if(item.equals(this.pick(i))){
@@ -71,6 +71,7 @@ public class StackDynamic<E>{
 		}
 		return -1;
 	}
+	// Gibt eine String Repraesentation des Stacks zurueck
 	public String toString(){
 		if(this.size()==-1){
 			return null;
@@ -85,7 +86,7 @@ public class StackDynamic<E>{
 		}
 		return "["+out+"]";
 	}
-	// Gibt an, wieviele Elemente sich in der Warteschlange befinden
+	// Gibt an, wieviele Elemente sich im Stack befinden
 	public int size(){
 		if(this.head==null){
 			return -1;
@@ -98,17 +99,11 @@ public class StackDynamic<E>{
 		}
 		return count;
 	}
-	// Reiht ein neues Element an den Anfang der Warteschlange. Diese Methode sollte nur zum Testen verwendet werden
-	public void prepend(E data){
-		Node newHead = new Node(data);
-		newHead.next=head;
-		head = newHead;
-	}
 	// Gibt alle Elemente von head bis Index b aus
 	public void printData(int b){
 		Node current = head;
-		int count = 0;
-		while(count<b&&(current.next!=null)){
+		int count = 1;
+		while(count<=b&&(current!=null)){
 			System.out.println(count+". "+current.data);
 			current = current.next;
 			count++;
