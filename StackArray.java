@@ -1,5 +1,5 @@
 // Die generische Klasse StackArray erstellt einen Stack (Kellerspeicher) nach LIFO Prinzip
-// mit Hilfe der Klasse ArrayList
+// mit Hilfe der Datenstruktur ArrayList
 import java.util.ArrayList;
 @SuppressWarnings("unchecked")
 public class StackArray<E>{
@@ -26,7 +26,7 @@ public class StackArray<E>{
 		}
 		return (E)list.get(0);
 	}
-	// Prueft ob der Stack leer ist, true falls ja
+	// Prueft ob der Stack leer ist, true falls ja, sonst false
 	public boolean isEmpty(){
 		return list.isEmpty();
 	}
@@ -37,7 +37,7 @@ public class StackArray<E>{
 		}
 		return list.lastIndexOf(item)+1;
 	}
-	// String represaentation des Stacks
+	// String Represaentation des Stacks
 	public String toString(){
 		String out="";
 		for(int i=0;i<list.size();i++){
@@ -51,7 +51,7 @@ public class StackArray<E>{
 		}
 		return "["+out+"]";
 	}
-	// Gibt die groesse des Stacks zurueck
+	// Gibt die Groesse des Stacks zurueck
 	public int size(){
 		return list.size();
 	}
