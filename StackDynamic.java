@@ -1,4 +1,5 @@
 // Die generische Klasse StackDynamic erstellt einen Stack (Kellerspeicher) nach LIFO Prinzip
+// mit Hilfe von Pointer Zeigerarithmetik
 public class StackDynamic<E>{
 	// Elemente der Wartschlange werden als Node Objekte dargestellt
 	public class Node{
@@ -44,7 +45,7 @@ public class StackDynamic<E>{
 			return head.data;
 		}
 	}
-	// Gibt an, ob der Stack leer ist. True falls leer
+	// Gibt an, ob der Stack leer ist. True falls leer, false falls nicht leer
 	public boolean isEmpty(){
 		if(head==null){
 			return true;
@@ -62,7 +63,7 @@ public class StackDynamic<E>{
 		}
 		return null;
 	}
-	// Gibt den Index des gesuchten Elements item zurueck. (Stack pointer = position 1) Gibt -1 zurück, falls das Element nicht im Stack zu finden ist
+	// Gibt den Index des gesuchten Elements zurueck. (Stack pointer = position 1) Gibt -1 zurück, falls das Element nicht im Stack zu finden ist
 	public int contains(E item){
 		for(int i=1;i<=this.size();i++){
 			if(item.equals(this.pick(i))){
