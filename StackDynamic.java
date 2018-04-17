@@ -62,7 +62,7 @@ public class StackDynamic<E>{
 		}
 		return null;
 	}
-	// Gibt den Index des gesuchten Elements zurueck. (Stack pointer = position 1) Gibt -1 zurück, falls das Element nicht im Stack zu finden ist
+	// Gibt den Index des gesuchten Elements zurueck. (Stack pointer = position 1) Gibt -1 zurueck, falls das Element nicht im Stack zu finden ist
 	public int contains(E item){
 		for(int i=1;i<=this.size();i++){
 			if(item.equals(this.pick(i))){
